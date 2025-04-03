@@ -53,7 +53,7 @@ const App = () => {
     if(firstNumber === '0'){
         setFirstNumber(String(currentNumber));
         setCurrentNumber('0')
-        setOperation('.')
+        setOperation('x')
     }else {
       const mult = Number(firstNumber) * Number(currentNumber);
       setCurrentNumber(String(mult))
@@ -86,7 +86,7 @@ const App = () => {
           case '-':
             handleMinusNumbers();
             break
-          case '.':
+          case 'x':
             handleMultNumbers();
             break;
           case '/':
@@ -104,10 +104,10 @@ const App = () => {
       <Content>
         <Input value={currentNumber}/>
         <Row>
-          <Button label="x"/>
+          <Button label="x" onClick={handleMultNumbers}/>
           <Button label="/" onClick={handleDivNumbers}/>
           <Button label="c" onClick={handleOnClear}/>
-          <Button label="." onClick={handleMultNumbers}/>
+          <Button label="."/>
         </Row>
         <Row>
           <Button label="7" onClick={() => handleAddNumber('7')}/>
